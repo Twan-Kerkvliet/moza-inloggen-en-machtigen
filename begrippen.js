@@ -12,6 +12,9 @@
 
   var BEGRIPPEN = {
     // ---- DigiD
+    'DigiD Zakelijk': { u: 'Aparte implementatie van DigiD waarbij de ondernemer bij het inloggen ook het KVK-nummer invult. Bedoeld voor de zelfstandig bevoegd bestuurder; nu in verkenning.' },
+    'ZBB': { u: 'Zelfstandig bevoegd bestuurder: bestuurder die de onderneming alleen, zonder medebestuurder, mag vertegenwoordigen.' },
+    'RSIN': { u: 'Rechtspersonen en Samenwerkingsverbanden Informatienummer: het fiscale nummer van een rechtspersoon of samenwerkingsverband, vastgelegd in het Handelsregister.' },
     'DigiD Machtigen': { u: 'Voorziening waarmee iemand een ander machtigt om namens hem zaken met de overheid te regelen. De gemachtigde logt in met zijn eigen DigiD.', l: 'https://machtigen.digid.nl/' },
     'DigiD Substantieel': { u: 'DigiD op betrouwbaarheidsniveau substantieel: inloggen met de DigiD-app nadat je identiteitsbewijs eenmalig is gecontroleerd.', l: 'https://www.digid.nl/' },
     'DigiD Hoog': { u: 'DigiD op het hoogste betrouwbaarheidsniveau: inloggen met de chip in je identiteitsbewijs of rijbewijs.', l: 'https://www.digid.nl/' },
@@ -108,7 +111,7 @@
   var CELLEN = 'nldd-text-cell, nldd-title-cell';
   var STIJL = '.afk{font:inherit;color:inherit;letter-spacing:inherit;background:none;border:none;padding:0;margin:0;' +
     'border-bottom:1px dotted currentColor;cursor:help;border-radius:2px;text-align:inherit;}' +
-    '.afk:focus-visible{outline:2px solid #ffbf00;outline-offset:1px;}' +
+    '.afk-nb{white-space:nowrap;}.afk:focus-visible{outline:2px solid #ffbf00;outline-offset:1px;}' +
     // In een schema (SVG) is het begrip een stuk tekst binnen de regel: daar een gestippelde onderstreping
     'tspan.afk{text-decoration:underline dotted;text-decoration-thickness:1px;text-underline-offset:2px;cursor:help;border-bottom:none;}' +
     '@media print{.afk{border-bottom:none;}tspan.afk{text-decoration:none;}}';
@@ -138,7 +141,13 @@
       }
       gezien[sleutel] = true;
       gewijzigd = true;
-      if (m.index > 0) frag.appendChild(document.createTextNode(rest.slice(0, m.index)));
+      var voor = rest.slice(0, m.index);
+      var na = rest.slice(m.index + m[1].length);
+      // Haakjes en leestekens direct om het begrip blijven op dezelfde regel (een knop is inline-block)
+      var open = inSvg ? '' : (voor.match(/[(\[“„"']+$/) || [''])[0];
+      var sluit = inSvg ? '' : (na.match(/^[)\]”"'.,;:!?]+/) || [''])[0];
+      voor = voor.slice(0, voor.length - open.length);
+      if (voor) frag.appendChild(document.createTextNode(voor));
       // In een schema (SVG-tekst) kan geen knop staan: daar een tspan die net zo reageert
       var b;
       if (inSvg) {
@@ -154,8 +163,17 @@
       b.dataset.afk = sleutel;
       b.setAttribute('aria-expanded', 'false');
       b.textContent = m[1];
-      frag.appendChild(b);
-      rest = rest.slice(m.index + m[1].length);
+      if (open || sluit) {
+        var groep = document.createElement('span');
+        groep.className = 'afk-nb';
+        if (open) groep.appendChild(document.createTextNode(open));
+        groep.appendChild(b);
+        if (sluit) groep.appendChild(document.createTextNode(sluit));
+        frag.appendChild(groep);
+      } else {
+        frag.appendChild(b);
+      }
+      rest = na.slice(sluit.length);
     }
     if (!gewijzigd) return;
     if (rest) frag.appendChild(document.createTextNode(rest));

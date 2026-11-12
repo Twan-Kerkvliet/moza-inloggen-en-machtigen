@@ -15,22 +15,20 @@
   <nldd-page>
 
     <nldd-simple-section id="inhoud">
-      <nldd-link size="sm" href="index.html" start-icon="chevron-left" text="Terug naar de roadmap"></nldd-link>
+      <nldd-link size="sm" href="index.html" start-icon="chevron-left" text="Inloggen en machtigen bij MOZa"></nldd-link>
       <nldd-spacer size="24"></nldd-spacer>
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="logos/eherkenning-donker.svg">
-        <img src="logos/eherkenning.svg" alt="Logo eHerkenning" height="32">
-      </picture>
-      <nldd-spacer size="16"></nldd-spacer>
       <nldd-title size="1">
-        <span slot="overline">Rollende roadmap inlog- en machtigingsmiddelen</span>
         <h1>eHerkenning: achtergrond</h1>
+        <picture slot="end">
+          <source media="(prefers-color-scheme: dark)" srcset="logos/eherkenning-donker.svg">
+          <img src="logos/eherkenning.svg" alt="Logo eHerkenning" height="32">
+        </picture>
       </nldd-title>
       <nldd-spacer size="16"></nldd-spacer>
       <nldd-banner data-ai-disclaimer variant="warning" size="sm" icon="sparkles" text="Bij het maken van deze content is gebruikgemaakt van AI."></nldd-banner>
       <nldd-spacer size="16"></nldd-spacer>
       <nldd-rich-text>
-        <p>Achtergrondinformatie bij het spoor eHerkenning in de roadmap: hoe inloggen met eHerkenning nu werkt, en hoe MOZa als dienstbemiddelaar diensten van meerdere dienstverleners in één portaal zou kunnen ontsluiten.</p>
+        <p>Achtergrondinformatie over eHerkenning: hoe inloggen met eHerkenning nu werkt, en hoe MOZa als dienstbemiddelaar diensten van meerdere dienstverleners in één portaal zou kunnen ontsluiten.</p>
         <ul>
           <li>De delen bouwen op elkaar voort: begin bovenaan.</li>
           <li>Bestaande flows werken nu al zo; van de conceptflows staat nog niet vast of ze kunnen.</li>
@@ -38,14 +36,19 @@
         </ul>
       </nldd-rich-text>
       <nldd-spacer size="24"></nldd-spacer>
-      <nldd-button appearance="neutral-tinted" size="sm" start-icon="desk-with-screen" text="Alle presentaties" href="eherkenning-aansluiten.html?presentatie"
+      <nldd-button appearance="neutral-tinted" size="sm" start-icon="desk-with-screen" text="Alle presentaties" href="eherkenning-aansluiten.html?presentatie&amp;terug=eherkenning.html"
         accessible-label="Open het overzicht van alle presentaties van de eHerkenning-flows"></nldd-button>
       <nldd-spacer size="12"></nldd-spacer>
       <nldd-list appearance="box-tinted" type="navigation" aria-label="Achtergrond eHerkenning">
+        <nldd-list-item href="eherkenning-moza.html">
+          <nldd-spacer-cell size="12"></nldd-spacer-cell>
+          <nldd-text-cell text="**eHerkenning en MOZa in het kort**" supporting-text="Hoe eHerkenning werkt, waarom een inlog nu voor één dienstverlener geldt (een ander pseudo-ID per dienstverlener) en wat we daarover onderzoeken voor MOZa."></nldd-text-cell>
+          <nldd-spacer-cell size="12"></nldd-spacer-cell>
+          <nldd-cell width="128px" vertical-alignment="top"><nldd-tag color="neutral" size="sm" text="Overzicht"></nldd-tag></nldd-cell>
+          <nldd-icon-cell icon="chevron-right" color="secondary" size="20"></nldd-icon-cell>
+        </nldd-list-item>
         <nldd-list-item href="eherkenning-aansluiten.html">
           <nldd-spacer-cell size="12"></nldd-spacer-cell>
-          <nldd-icon-cell icon="link" color="accent" size="24" vertical-alignment="top"></nldd-icon-cell>
-          <nldd-spacer-cell size="8"></nldd-spacer-cell>
           <nldd-text-cell text="**1. Dienstverlener sluit een dienst aan op eHerkenning**" supporting-text="Hoe een dienstverlener (bijv. Justis) via een herkenningsmakelaar een dienst registreert in de dienstencatalogus, zodat ondernemers ervoor kunnen inloggen."></nldd-text-cell>
           <nldd-spacer-cell size="12"></nldd-spacer-cell>
           <nldd-cell width="128px" vertical-alignment="top"><nldd-tag color="success" size="sm" text="Bestaande flow"></nldd-tag></nldd-cell>
@@ -53,8 +56,6 @@
         </nldd-list-item>
         <nldd-list-item href="eherkenning-machtigen.html">
           <nldd-spacer-cell size="12"></nldd-spacer-cell>
-          <nldd-icon-cell icon="person" color="accent" size="24" vertical-alignment="top"></nldd-icon-cell>
-          <nldd-spacer-cell size="8"></nldd-spacer-cell>
           <nldd-text-cell text="**2. Karin neemt eHerkenning af en machtigt Bilal**" supporting-text="Hoe een ondernemer eHerkenning afneemt op een gekozen niveau, een account aanvraagt voor een werknemer en die werknemer machtigt voor diensten uit de dienstencatalogus."></nldd-text-cell>
           <nldd-spacer-cell size="12"></nldd-spacer-cell>
           <nldd-cell width="128px" vertical-alignment="top"><nldd-tag color="success" size="sm" text="Bestaande flow"></nldd-tag></nldd-cell>
@@ -62,8 +63,6 @@
         </nldd-list-item>
         <nldd-list-item href="eherkenning-dienstencatalogus.html">
           <nldd-spacer-cell size="12"></nldd-spacer-cell>
-          <nldd-icon-cell icon="file-box" color="accent" size="24" vertical-alignment="top"></nldd-icon-cell>
-          <nldd-spacer-cell size="8"></nldd-spacer-cell>
           <nldd-text-cell text="**3. Dienstencatalogus eHerkenning**" supporting-text="Hoe dienstaanbieders, diensten, portaaldiensten en dienstbemiddelaars in de dienstencatalogus samenhangen, en waar MOZa daarin zou kunnen passen."></nldd-text-cell>
           <nldd-spacer-cell size="12"></nldd-spacer-cell>
           <nldd-cell width="128px" vertical-alignment="top"><nldd-tag color="neutral" size="sm" text="Overzicht"></nldd-tag></nldd-cell>
@@ -71,8 +70,6 @@
         </nldd-list-item>
         <nldd-list-item href="eherkenning-inloggen.html">
           <nldd-spacer-cell size="12"></nldd-spacer-cell>
-          <nldd-icon-cell icon="check-list" color="accent" size="24" vertical-alignment="top"></nldd-icon-cell>
-          <nldd-spacer-cell size="8"></nldd-spacer-cell>
           <nldd-text-cell text="**4. Bilal logt in bij een losse dienst**" supporting-text="Stap voor stap hoe inloggen met eHerkenning nu werkt bij één dienst (het werkgeversportaal van UWV): herkenningsmakelaar, leverancier, machtigingen en de assertion."></nldd-text-cell>
           <nldd-spacer-cell size="12"></nldd-spacer-cell>
           <nldd-cell width="128px" vertical-alignment="top"><nldd-tag color="success" size="sm" text="Bestaande flow"></nldd-tag></nldd-cell>
@@ -80,8 +77,6 @@
         </nldd-list-item>
         <nldd-list-item href="eherkenning-moza-optie1.html">
           <nldd-spacer-cell size="12"></nldd-spacer-cell>
-          <nldd-icon-cell icon="centralized-network" color="accent" size="24" vertical-alignment="top"></nldd-icon-cell>
-          <nldd-spacer-cell size="8"></nldd-spacer-cell>
           <nldd-text-cell text="**5. MOZa-portaal via dienstbemiddeling mét portaaldienst**" supporting-text="Bilal logt in bij het MOZa-portaal als één portaaldienst: één inlogverzoek voor het hele portaal en machtigingen in bulk."></nldd-text-cell>
           <nldd-spacer-cell size="12"></nldd-spacer-cell>
           <nldd-cell width="128px" vertical-alignment="top"><nldd-tag color="accent" size="sm" text="Conceptflow"></nldd-tag></nldd-cell>
@@ -89,8 +84,6 @@
         </nldd-list-item>
         <nldd-list-item href="eherkenning-moza-optie2.html">
           <nldd-spacer-cell size="12"></nldd-spacer-cell>
-          <nldd-icon-cell icon="centralized-network" color="accent" size="24" vertical-alignment="top"></nldd-icon-cell>
-          <nldd-spacer-cell size="8"></nldd-spacer-cell>
           <nldd-text-cell text="**6. MOZa-portaal via dienstbemiddeling zónder portaaldienst**" supporting-text="Bilal logt in bij het MOZa-portaal en MOZa bemiddelt voor elke dienst afzonderlijk, met drie mogelijke varianten (A, B, C) voor het inlogverzoek en de assertion."></nldd-text-cell>
           <nldd-spacer-cell size="12"></nldd-spacer-cell>
           <nldd-cell width="128px" vertical-alignment="top"><nldd-tag color="accent" size="sm" text="Conceptflow"></nldd-tag></nldd-cell>
@@ -100,7 +93,7 @@
       <div id="opm-hint"></div>
     </nldd-simple-section>
 
-    <nldd-simple-section id="bronnen">
+    <nldd-simple-section background="base" id="bronnen">
       <nldd-title size="3"><h3>Bronnen</h3></nldd-title>
       <nldd-spacer size="8"></nldd-spacer>
       <nldd-rich-text>
@@ -117,9 +110,10 @@
         <div id="opm-knop"></div>
         <nldd-container gap="4">
           <nldd-title size="4"><h2>Meedoen</h2></nldd-title>
-          <nldd-rich-text spacing="tight"><p>Heb je feedback of wil je meedenken? Dat kan altijd: stuur een e-mail naar <a href="mailto:moza@minbzk.nl">moza@minbzk.nl</a>.</p></nldd-rich-text>
+          <nldd-rich-text spacing="tight"><p>Heb je feedback of wil je meedenken? Dat kan altijd: stuur een e-mail naar <a href="mailto:moza@minbzk.nl">moza@minbzk.nl</a>.</p><p>Heb je een Rijksaccount? Dan kun je <a href="/auth/inloggen?voor=opmerkingen&amp;rd=/eherkenning.html">inloggen</a> en opmerkingen plaatsen op de pagina's.</p></nldd-rich-text>
         </nldd-container>
-        <nldd-rich-text spacing="tight"><p>Concept roadmap MOZa - inlog- en machtigingsmiddelen. Versie november 2026.</p></nldd-rich-text>
+        <nldd-divider style="--semantics-dividers-color: var(--primitives-color-neutral-200)"></nldd-divider>
+        <nldd-rich-text spacing="tight"><p>Concept MOZa - inlog- en machtigingsmiddelen. Versie november 2026.</p></nldd-rich-text>
       </nldd-container>
     </nldd-page-footer>
   </nldd-page>

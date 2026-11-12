@@ -18,7 +18,7 @@
       <nldd-link size="sm" href="ebw.html" start-icon="chevron-left" text="Terug naar EBW: achtergrond"></nldd-link>
       <nldd-spacer size="24"></nldd-spacer>
       <nldd-title size="1">
-        <span slot="overline">European Business Wallet</span>
+        <span slot="overline">European Business Wallet · deel 5 · analyse</span>
         <h1>WE BUILD: analyses van de use cases</h1>
       </nldd-title>
       <nldd-spacer size="16"></nldd-spacer>
@@ -32,10 +32,25 @@
       <nldd-rich-text>
         <p>Deze analyse is gebaseerd op de use-casepagina's van WE BUILD en op de publieke deliverables <strong>D2.1 Pilot Design</strong> (Business-domein, v1.0, 30 juli 2026) en <strong>D4.1 Architecture &amp; Integration Blueprint</strong> (v1.0, maart 2026). Paginanummers verwijzen naar die documenten. Eigen interpretaties zijn gemarkeerd. Onderaan staat een <a href="#afkortingen">lijst met afkortingen</a>.</p>
       </nldd-rich-text>
+      <nldd-spacer size="24"></nldd-spacer>
+      <nldd-title size="4"><h2>Op deze pagina</h2></nldd-title>
+      <nldd-spacer size="8"></nldd-spacer>
+      <nldd-rich-text spacing="tight">
+        <ul>
+          <li><a href="#kort">In het kort voor MOZa</a></li>
+          <li><a href="#bu3">BU3: Foreign Tax Declaration</a> (<a href="#bu3-gegevens">gegevens</a>)</li>
+          <li><a href="#bu4">BU4: Company Representative acting on behalf of a Company</a> (<a href="#bu4-gegevens">gegevens</a>)</li>
+          <li><a href="#bu6">BU6: Business Access to OOTS</a> (<a href="#oots-definitie">wat is OOTS?</a>, <a href="#bu6-gegevens">gegevens</a>)</li>
+          <li><a href="#architectuur">Architectuur en vertrouwen</a></li>
+          <li><a href="#open-punten">WE BUILD en onze open punten</a></li>
+          <li><a href="#afkortingen">Afkortingen</a></li>
+          <li><a href="#bronnen">Bronnen</a></li>
+        </ul>
+      </nldd-rich-text>
       <div id="opm-hint"></div>
     </nldd-simple-section>
 
-    <nldd-simple-section id="kort">
+    <nldd-simple-section background="base" id="kort">
       <nldd-title size="2"><h2>In het kort voor MOZa</h2></nldd-title>
       <nldd-spacer size="16"></nldd-spacer>
       <nldd-list appearance="box-tinted" id="takeaways" aria-label="Belangrijkste lessen voor MOZa"></nldd-list>
@@ -89,7 +104,7 @@
       <nldd-list appearance="box-tinted" id="bu3-moza" aria-label="Betekenis van BU3 voor MOZa"></nldd-list>
     </nldd-simple-section>
 
-    <nldd-simple-section id="bu4">
+    <nldd-simple-section background="base" id="bu4">
       <nldd-title size="2">
         <span slot="overline">BU4</span>
         <h2>Company Representative acting on behalf of a Company</h2>
@@ -226,7 +241,7 @@
       <nldd-list appearance="box-tinted" id="bu6-moza" aria-label="Betekenis van BU6 voor MOZa"></nldd-list>
     </nldd-simple-section>
 
-    <nldd-simple-section id="architectuur">
+    <nldd-simple-section background="base" id="architectuur">
       <nldd-title size="2">
         <span slot="overline">D4.1</span>
         <h2>Architectuur en vertrouwen</h2>
@@ -267,7 +282,7 @@
       <nldd-table id="open-tabel" columns="minmax(180px,1.2fr) minmax(240px,2fr)" accessible-label="Open punten en wat WE BUILD erover zegt"></nldd-table>
     </nldd-simple-section>
 
-    <nldd-simple-section id="afkortingen">
+    <nldd-simple-section background="base" id="afkortingen">
       <nldd-title size="2"><h2>Afkortingen</h2></nldd-title>
       <nldd-spacer size="16"></nldd-spacer>
       <nldd-table id="afk-tabel" columns="minmax(110px,0.6fr) minmax(200px,1.4fr) minmax(240px,2.4fr)" accessible-label="Afkortingen"></nldd-table>
@@ -291,9 +306,10 @@
         <div id="opm-knop"></div>
         <nldd-container gap="4">
           <nldd-title size="4"><h2>Meedoen</h2></nldd-title>
-          <nldd-rich-text spacing="tight"><p>Heb je feedback of wil je meedenken? Dat kan altijd: stuur een e-mail naar <a href="mailto:moza@minbzk.nl">moza@minbzk.nl</a>.</p></nldd-rich-text>
+          <nldd-rich-text spacing="tight"><p>Heb je feedback of wil je meedenken? Dat kan altijd: stuur een e-mail naar <a href="mailto:moza@minbzk.nl">moza@minbzk.nl</a>.</p><p>Heb je een Rijksaccount? Dan kun je <a href="/auth/inloggen?voor=opmerkingen&amp;rd=/webuild.html">inloggen</a> en opmerkingen plaatsen op de pagina's.</p></nldd-rich-text>
         </nldd-container>
-        <nldd-rich-text spacing="tight"><p>Concept roadmap MOZa - inlog- en machtigingsmiddelen. Versie oktober 2026. Samenvatting van publieke WE BUILD-documenten; de bron blijft leidend.</p></nldd-rich-text>
+        <nldd-divider style="--semantics-dividers-color: var(--primitives-color-neutral-200)"></nldd-divider>
+        <nldd-rich-text spacing="tight"><p>Concept MOZa - inlog- en machtigingsmiddelen. Versie oktober 2026. Samenvatting van publieke WE BUILD-documenten; de bron blijft leidend.</p></nldd-rich-text>
       </nldd-container>
     </nldd-page-footer>
   </nldd-page>
@@ -341,7 +357,7 @@ points('bu4-moza', [
   ['pencil', 'Betekenis voor MOZa: scope zelf vastleggen', 'Voor machtigingen die de onderneming zelf uitgeeft (PoE, Power of Employee) moet de betekenis van de scope met de relying party zijn afgesproken. MOZa moet die semantiek dus zelf vastleggen (p. 369; interpretatie).'],
 ]);
 points('bu6-moza', [
-  ['magnifier', 'Betekenis voor MOZa: OOTS als aanvulling', 'Voor het verkenningsspoor OOTS in de roadmap is "OOTS naast de wallet" een realistischer framing dan "OOTS als alternatief voor de wallet" (interpretatie).'],
+  ['magnifier', 'Betekenis voor MOZa: OOTS als aanvulling', 'Voor een verkenning van OOTS door MOZa is "OOTS naast de wallet" een realistischer framing dan "OOTS als alternatief voor de wallet" (interpretatie).'],
   ['shield', 'Betekenis voor MOZa: identity swap-check', 'Bij elke overstap tussen kanalen controleren dat persoon en onderneming gelijk blijven (p. 409; interpretatie).'],
   ['flag', 'Betekenis voor MOZa: ruimte als Nederlandse relying party', 'Nederland levert alleen bewijs; een Nederlandse relying party en de EBW-variant zijn nog open (MVP+). MOZa zou zich daarvoor kunnen melden (interpretatie).'],
 ]);

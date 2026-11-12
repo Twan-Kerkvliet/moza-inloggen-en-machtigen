@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>eHerkenning en MOZa: inloggen en machtigen</title>
+  <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="icons/favicon-192x192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="icons/touch-icon.png">
+  <link rel="stylesheet" href="https://esm.sh/@nldd/design-system@0.8.99/dist/css/global.css">
+  <script type="module" src="https://esm.sh/@nldd/design-system@0.8.99"></script>
+  <style>
+    /* Uitzondering op NLDD-only: het schema is een SVG-tekening op een 'papieren' canvas in dezelfde
+       stijl als op het EBW-landschap (bewust licht, ook in donkere modus). */
+    .canvas { overflow-x: auto; border-radius: var(--primitives-corner-radius-md, 12px); }
+    .canvas > svg { display: block; width: 100%; min-width: 760px; height: auto; }
+    .canvas text { font-family: "RijksSans", system-ui, sans-serif; }
+  </style>
+</head>
+<body>
+<nldd-shell background="tinted">
+  <nldd-page>
+
+    <nldd-simple-section id="intro">
+      <nldd-link size="sm" href="eherkenning.html" start-icon="chevron-left" text="Terug naar eHerkenning: achtergrond"></nldd-link>
+      <nldd-spacer size="24"></nldd-spacer>
+      <nldd-title size="1">
+        <h1>eHerkenning en MOZa: inloggen en machtigen</h1>
+        <picture slot="end">
+          <source media="(prefers-color-scheme: dark)" srcset="logos/eherkenning-donker.svg">
+          <img src="logos/eherkenning.svg" alt="Logo eHerkenning" height="32">
+        </picture>
+      </nldd-title>
+      <nldd-spacer size="16"></nldd-spacer>
+      <nldd-banner data-ai-disclaimer variant="warning" size="sm" icon="sparkles" text="Bij het maken van deze content is gebruikgemaakt van AI."></nldd-banner>
+      <nldd-spacer size="16"></nldd-spacer>
+      <nldd-tag color="neutral" size="sm" text="Status: verkenning"></nldd-tag>
+      <nldd-spacer size="16"></nldd-spacer>
+      <nldd-rich-text>
+        <p>Hoe eHerkenning werkt voor ondernemers, wat dat betekent voor MijnOverheid Zakelijk (MOZa) en welke vragen we onderzoeken om in te loggen bij meerdere dienstverleners tegelijk.</p>
+      </nldd-rich-text>
+      <div id="opm-hint"></div>
+    </nldd-simple-section>
+
+    <nldd-simple-section background="base" id="in-nederland">
+      <nldd-title size="2" slot="header"><h2>eHerkenning in Nederland</h2></nldd-title>
+      <nldd-rich-text>
+        <p>Met eHerkenning loggen ondernemers en organisaties zakelijk in. Wat DigiD is voor inwoners, is eHerkenning voor bedrijven. Je logt ermee in namens je onderneming, bijvoorbeeld bij de Belastingdienst, UWV, RVO of je gemeente. De <a href="https://wetten.overheid.nl/BWBR0048156/">Wet digitale overheid</a> verplicht overheidsorganisaties om inloggen met eHerkenning te ondersteunen.</p>
+        <p>Ook MOZa gaat inloggen met eHerkenning ondersteunen, naast DigiD en wallets. Daarom verkennen we hoe eHerkenning nu werkt en wat dat betekent voor MOZa. Ons doel: een ondernemer logt één keer in en ziet alles wat de overheid voor de onderneming heeft klaarstaan.</p>
+      </nldd-rich-text>
+    </nldd-simple-section>
+
+    <nldd-simple-section id="wat-is-eherkenning">
+      <nldd-title size="2" slot="header"><h2>Wat is eHerkenning?</h2></nldd-title>
+      <nldd-rich-text>
+        <p>eHerkenning is geen dienst van de overheid zelf. Je vraagt een eHerkenning-account aan bij een <a href="https://www.eherkenning.nl/">erkende leverancier</a>. De afspraken waar iedereen zich aan houdt, staan in het <a href="https://afsprakenstelsel.etoegang.nl/">Afsprakenstelsel Elektronische Toegangsdiensten</a>. Logius beheert dat afsprakenstelsel.</p>
+        <p>Drie dingen zijn belangrijk:</p>
+        <ul>
+          <li><strong>Persoonsgebonden.</strong> Een account is van één persoon. Je mag het niet delen of overdragen. Iedere medewerker die namens de onderneming inlogt, heeft een eigen account.</li>
+          <li><strong>Machtigingen per dienst.</strong> Zonder machtiging werkt eHerkenning niet. In een machtiging staat bij welke dienstverleners en voor welke diensten iemand namens de onderneming mag inloggen.</li>
+          <li><strong>Betrouwbaarheidsniveaus.</strong> Er zijn drie niveaus: EH2+, EH3 en EH4. De dienstverlener bepaalt welk niveau nodig is. De meeste dienstverleners vragen EH3.</li>
+        </ul>
+      </nldd-rich-text>
+      <nldd-spacer size="24"></nldd-spacer>
+      <nldd-title size="5"><h3>Zo hangt het samen</h3></nldd-title>
+      <nldd-spacer size="8"></nldd-spacer>
+      <nldd-rich-text>
+        <p>Een voorbeeld: een onderneming met een eigenaar en een medewerker. De medewerker logt in bij een dienstverlener om iets te regelen namens de onderneming. Zo werkt het, stap voor stap:</p>
+        <ol>
+          <li><strong>Aanvragen.</strong> De onderneming vraagt bij een leverancier een account aan voor de medewerker.</li>
+          <li><strong>Machtigen.</strong> De eigenaar legt bij de leverancier vast voor welke diensten de medewerker namens de onderneming mag inloggen.</li>
+          <li><strong>Inloggen.</strong> De medewerker kiest bij de dienstverlener voor eHerkenning en logt in met het eigen account.</li>
+          <li><strong>Verklaring.</strong> De dienstverlener krijgt een verklaring terug. Daarin staat het KVK-nummer van de onderneming en een pseudo-ID van de medewerker. Ook staat erin dat de medewerker voor deze dienst gemachtigd is.</li>
+          <li><strong>Gebruiken.</strong> De medewerker regelt de zaak namens de onderneming.</li>
+        </ol>
+        <p>Meer detail staat in <a href="eherkenning-machtigen.html">deel 2 (machtigen)</a> en <a href="eherkenning-inloggen.html">deel 4 (inloggen bij een losse dienst)</a>.</p>
+      </nldd-rich-text>
+    </nldd-simple-section>
+
+    <nldd-simple-section background="base" id="eherkenning-en-moza">
+      <nldd-title size="2" slot="header"><h2>eHerkenning en MOZa</h2></nldd-title>
+      <nldd-title size="5"><h3>Eén inlog, één dienstverlener</h3></nldd-title>
+      <nldd-spacer size="8"></nldd-spacer>
+      <nldd-rich-text>
+        <p>Een pseudo-ID is een nummer dat de persoon aanduidt zonder dat de dienstverlener weet wie het is. eHerkenning maakt voor elke dienstverlener een ander pseudo-ID. Dit is zo ingericht om de privacy van de burger of ondernemer optimaal te borgen.</p>
+        <p>Maar het heeft ook een gevolg. Een inlog met eHerkenning geldt nu voor één dienstverlener. De Belastingdienst kent de medewerker onder een ander pseudo-ID dan de gemeente.</p>
+      </nldd-rich-text>
+      <nldd-spacer size="16"></nldd-spacer>
+      <div class="canvas" id="pseudo-schema" role="img" aria-labelledby="pseudo-titel pseudo-uitleg">
+<svg viewBox="0 0 1000 330" xmlns="http://www.w3.org/2000/svg">
+  <title id="pseudo-titel">Schema: één persoon, een ander pseudo-ID per dienstverlener</title>
+  <desc id="pseudo-uitleg">Een ondernemer logt in met eHerkenning. MOZa krijgt pseudo-ID A, de Belastingdienst kent dezelfde persoon als pseudo-ID B en de gemeente als pseudo-ID C. Alleen bij MOZa is de ondernemer ingelogd (doorgetrokken lijn); naar de Belastingdienst en de gemeente lopen stippellijnen, omdat de ondernemer daar nog niet is ingelogd.</desc>
+  <defs>
+    <pattern id="pseudo-grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#eef0f3" stroke-width="1"/></pattern>
+    <marker id="pseudo-pijl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#666"/></marker>
+    <marker id="pseudo-pijl-moza" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#154273"/></marker>
+  </defs>
+  <rect width="1000" height="330" fill="#fff"/>
+  <rect width="1000" height="330" fill="url(#pseudo-grid)"/>
+  <text x="500" y="32" font-size="14" font-weight="700" fill="#333" text-anchor="middle">Eén persoon, een ander pseudo-ID per dienstverlener</text>
+
+  <!-- Ondernemer -->
+  <rect x="30" y="140" width="140" height="56" rx="10" fill="#f5f5f5" stroke="#666" stroke-width="1.4"/>
+  <text x="100" y="173" font-size="13" font-weight="700" fill="#333" text-anchor="middle">Ondernemer</text>
+  <!-- Inloggen met eHerkenning -->
+  <rect x="230" y="134" width="170" height="68" rx="10" fill="#fdf0e2" stroke="#b46504" stroke-width="1.4"/>
+  <text x="315" y="164" font-size="13" font-weight="700" fill="#333" text-anchor="middle">Inloggen met</text>
+  <text x="315" y="182" font-size="13" font-weight="700" fill="#333" text-anchor="middle">eHerkenning</text>
+  <!-- Pseudo-ID's -->
+  <rect x="490" y="64" width="150" height="48" rx="10" fill="#fff" stroke="#154273" stroke-width="1.6"/>
+  <text x="565" y="93" font-size="13" font-weight="700" fill="#154273" text-anchor="middle">pseudo-ID A</text>
+  <rect x="490" y="144" width="150" height="48" rx="10" fill="#fff" stroke="#666" stroke-width="1.4" stroke-dasharray="6 4"/>
+  <text x="565" y="173" font-size="13" font-weight="700" fill="#333" text-anchor="middle">pseudo-ID B</text>
+  <rect x="490" y="224" width="150" height="48" rx="10" fill="#fff" stroke="#666" stroke-width="1.4" stroke-dasharray="6 4"/>
+  <text x="565" y="253" font-size="13" font-weight="700" fill="#333" text-anchor="middle">pseudo-ID C</text>
+  <!-- Dienstverleners -->
+  <rect x="730" y="64" width="190" height="48" rx="10" fill="#dae8fc" stroke="#154273" stroke-width="1.6"/>
+  <text x="825" y="93" font-size="13" font-weight="700" fill="#333" text-anchor="middle">MOZa</text>
+  <rect x="730" y="144" width="190" height="48" rx="10" fill="#f5f5f5" stroke="#666" stroke-width="1.4"/>
+  <text x="825" y="173" font-size="13" font-weight="700" fill="#333" text-anchor="middle">Belastingdienst</text>
+  <rect x="730" y="224" width="190" height="48" rx="10" fill="#f5f5f5" stroke="#666" stroke-width="1.4"/>
+  <text x="825" y="253" font-size="13" font-weight="700" fill="#333" text-anchor="middle">Gemeente</text>
+
+  <!-- Lijnen -->
+  <path d="M170 168H226" fill="none" stroke="#666" stroke-width="1.6" marker-end="url(#pseudo-pijl)"/>
+  <path d="M400 156C445 156 445 88 486 88" fill="none" stroke="#154273" stroke-width="1.8" marker-end="url(#pseudo-pijl-moza)"/>
+  <path d="M400 168H486" fill="none" stroke="#666" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#pseudo-pijl)"/>
+  <path d="M400 180C445 180 445 248 486 248" fill="none" stroke="#666" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#pseudo-pijl)"/>
+  <path d="M640 88H726" fill="none" stroke="#154273" stroke-width="1.8" marker-end="url(#pseudo-pijl-moza)"/>
+  <path d="M640 168H726" fill="none" stroke="#666" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#pseudo-pijl)"/>
+  <path d="M640 248H726" fill="none" stroke="#666" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#pseudo-pijl)"/>
+
+  <!-- Legenda -->
+  <path d="M30 300H70" stroke="#154273" stroke-width="1.8"/>
+  <text x="80" y="304" font-size="12" fill="#333">ingelogd</text>
+  <path d="M170 300H210" stroke="#666" stroke-width="1.4" stroke-dasharray="6 4"/>
+  <text x="220" y="304" font-size="12" fill="#333">nog niet ingelogd: aparte inlog nodig</text>
+</svg>
+      </div>
+      <nldd-spacer size="16"></nldd-spacer>
+      <nldd-rich-text>
+        <p>Zo lees je het schema, van links naar rechts:</p>
+        <ul>
+          <li><strong>Ondernemer.</strong> Een ondernemer of medewerker wil iets regelen namens de onderneming.</li>
+          <li><strong>Inloggen met eHerkenning.</strong> De ondernemer logt in met het eigen eHerkenning-account.</li>
+          <li><strong>MOZa (doorgetrokken lijn).</strong> De ondernemer logt in bij MOZa. MOZa krijgt een eigen pseudo-ID van deze persoon: pseudo-ID A.</li>
+          <li><strong>Belastingdienst en gemeente (stippellijnen).</strong> Deze dienstverleners kennen dezelfde persoon onder een ander pseudo-ID: B en C. De stippellijn betekent: hier is de ondernemer nog niet ingelogd.</li>
+        </ul>
+        <p>De letters A, B en C staan voor drie verschillende nummers voor één en dezelfde persoon. De Belastingdienst en de gemeente kunnen pseudo-ID A niet herkennen. Ze kunnen dus ook niet controleren of de persoon die bij MOZa is ingelogd, voor hun diensten gemachtigd is. Daarvoor moet de ondernemer bij hen apart inloggen.</p>
+      </nldd-rich-text>
+      <nldd-spacer size="24"></nldd-spacer>
+      <nldd-title size="5"><h3>Wat betekent dit voor MOZa?</h3></nldd-title>
+      <nldd-spacer size="8"></nldd-spacer>
+      <nldd-rich-text>
+        <p>In MOZa wil je als ondernemer alle berichten van de overheid op één plek zien. Bijvoorbeeld via het <a href="https://mijnoverheidzakelijk.nl/onderwerpen/berichten/fbs/">Federatief Berichtenstelsel</a>. Maar met de huidige eHerkenning kan MOZa nog niet de berichten van alle dienstverleners tonen. MOZa kan namelijk niet namens de ingelogde persoon aantonen dat die bij elke dienstverlener gemachtigd is.</p>
+      </nldd-rich-text>
+      <nldd-spacer size="24"></nldd-spacer>
+      <nldd-title size="5"><h3>Wat we onderzoeken</h3></nldd-title>
+      <nldd-spacer size="8"></nldd-spacer>
+      <nldd-rich-text>
+        <ul>
+          <li>Hoe kan één inlog met eHerkenning in het MOZa-portaal gelden voor meerdere dienstverleners, zonder de privacy van de pseudo-ID's op te geven?</li>
+          <li>Hoe neemt het MOZa-portaal de eHerkenning-machtigingen over, zodat berichten van een dienstverlener alleen worden getoond aan degene die hiervoor gemachtigd is?</li>
+          <li>Hoe gebruiken ondernemers eHerkenning, DigiD en de business wallet of persoonlijke wallet straks naast elkaar?</li>
+        </ul>
+        <p>Twee mogelijke routes werken we uit als conceptflow: <a href="eherkenning-moza-optie1.html">deel 5 (mét portaaldienst)</a> en <a href="eherkenning-moza-optie2.html">deel 6 (zónder portaaldienst)</a>.</p>
+      </nldd-rich-text>
+    </nldd-simple-section>
+
+    <nldd-simple-section id="beproeven">
+      <nldd-title size="2" slot="header"><h2>Wat we beproeven</h2></nldd-title>
+      <nldd-rich-text>
+        <p>We leren door te bouwen. In de <a href="https://mijnoverheidzakelijk.nl/onderwerpen/proeftuin/">proeftuin</a> ondersteunen we straks drie manieren van inloggen: DigiD, eHerkenning en wallets. De proeftuin heeft nog geen echte koppeling met eHerkenning. Je logt in met testgegevens.</p>
+      </nldd-rich-text>
+    </nldd-simple-section>
+
+    <nldd-simple-section background="base" id="samenwerking">
+      <nldd-title size="2" slot="header"><h2>Samenwerking</h2></nldd-title>
+      <nldd-rich-text>
+        <p>We werken onder andere samen met:</p>
+        <ul>
+          <li>Logius</li>
+          <li>het ministerie van Binnenlandse Zaken en Koninkrijksrelaties</li>
+          <li>het ministerie van Economische Zaken</li>
+        </ul>
+        <p>Daarnaast zoeken we contact met architecten van eHerkenning en met leveranciers. Ook halen we ervaringen op bij dienstverleners die gebruikmaken van eHerkenning als inlogmiddel.</p>
+      </nldd-rich-text>
+    </nldd-simple-section>
+
+    <nldd-simple-section id="bronnen">
+      <nldd-title size="3"><h3>Bronnen</h3></nldd-title>
+      <nldd-spacer size="8"></nldd-spacer>
+      <nldd-rich-text>
+        <ul>
+          <li><a href="https://www.eherkenning.nl/">eHerkenning.nl</a>: informatie voor ondernemers en dienstverleners</li>
+          <li><a href="https://afsprakenstelsel.etoegang.nl/">Afsprakenstelsel Elektronische Toegangsdiensten (eHerkenning)</a></li>
+          <li><a href="https://wetten.overheid.nl/BWBR0048156/">Wet digitale overheid</a></li>
+          <li><a href="https://ondernemersplein.overheid.nl/wetten-en-regels/eherkenning-aanvragen/">eHerkenning aanvragen op Ondernemersplein</a></li>
+          <li><a href="https://www.belastingdienst.nl/wps/wcm/connect/nl/ondernemers/content/vanaf-januari-2027-inloggen-met-digid-op-mijn-belastingdienst-zakelijk-voor-meer-ondernemers">Inloggen met DigiD op Mijn Belastingdienst Zakelijk vanaf januari 2027</a></li>
+          <li><a href="digid.html">DigiD: achtergrond</a></li>
+          <li><a href="ebw.html">European Business Wallet: achtergrond</a></li>
+          <li>MOZa Weekly's (februari tot en met november 2026)</li>
+        </ul>
+      </nldd-rich-text>
+    </nldd-simple-section>
+
+    <nldd-page-footer>
+      <nldd-container padding="24" gap="16">
+        <div id="opm-knop"></div>
+        <nldd-container gap="4">
+          <nldd-title size="4"><h2>Meedoen</h2></nldd-title>
+          <nldd-rich-text spacing="tight"><p>Heb je feedback op deze pagina? Of wil je meedenken over inloggen met eHerkenning in MOZa? Dat kan altijd: stuur een e-mail naar <a href="mailto:moza@minbzk.nl">moza@minbzk.nl</a>.</p></nldd-rich-text>
+        </nldd-container>
+        <nldd-rich-text spacing="tight"><p>Concept roadmap MOZa - inlog- en machtigingsmiddelen. Versie november 2026. Vereenvoudigde weergave op basis van het Afsprakenstelsel Elektronische Toegangsdiensten.</p></nldd-rich-text>
+      </nldd-container>
+    </nldd-page-footer>
+  </nldd-page>
+</nldd-shell>
+<script type="module" src="opmerkingen.js"></script>
+<script defer src="begrippen.js"></script>
+</body>
+</html>

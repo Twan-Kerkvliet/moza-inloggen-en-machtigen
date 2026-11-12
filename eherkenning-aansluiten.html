@@ -35,7 +35,7 @@
       <div id="opm-hint"></div>
     </nldd-simple-section>
 
-    <nldd-simple-section id="landschap">
+    <nldd-simple-section background="base" id="landschap">
       <nldd-title size="2"><h2>Hoe hangt het samen?</h2><p slot="supporting-text">Een ondernemer neemt eHerkenning af bij een leverancier, een dienstverlener kiest een herkenningsmakelaar. Elke herkenningsmakelaar werkt met alle leveranciers. Daardoor kan Karin, met een account bij Z login, net zo goed bij UWV als bij de Belastingdienst inloggen, en kan Yassin dat met een account bij Digidentity ook.</p></nldd-title>
       <nldd-spacer size="16"></nldd-spacer>
       <div class="canvas" id="landschap-schema" role="img" aria-labelledby="ehl-titel ehl-uitleg">
@@ -208,49 +208,10 @@
   <text data-stap="6" x="640" y="424" font-size="11.5" fill="#0e7c86" text-anchor="middle">Dienst aangesloten</text>
 </svg>
       </div>
-      <nldd-spacer size="16"></nldd-spacer>
-      <nldd-list appearance="box-tinted" aria-label="De stappen toegelicht">
-        <nldd-list-item>
-          <nldd-spacer-cell size="12"></nldd-spacer-cell>
-          <nldd-text-cell vertical-alignment="top" width="32px" text="**1**"></nldd-text-cell>
-          <nldd-spacer-cell size="12"></nldd-spacer-cell>
-          <nldd-text-cell text="**Makelaar kiezen**" supporting-text="Justis wil een dienst via eHerkenning aanbieden en kiest daarvoor zelf een herkenningsmakelaar. Via die makelaar sluit Justis aan op het eHerkenningsstelsel."></nldd-text-cell>
-        </nldd-list-item>
-        <nldd-list-item>
-          <nldd-spacer-cell size="12"></nldd-spacer-cell>
-          <nldd-text-cell vertical-alignment="top" width="32px" text="**2**"></nldd-text-cell>
-          <nldd-spacer-cell size="12"></nldd-spacer-cell>
-          <nldd-text-cell text="**Gegevens opvragen**" supporting-text="De makelaar vraagt Justis de gegevens aan te leveren van de dienst(en) die Justis wil registreren."></nldd-text-cell>
-        </nldd-list-item>
-        <nldd-list-item>
-          <nldd-spacer-cell size="12"></nldd-spacer-cell>
-          <nldd-text-cell vertical-alignment="top" width="32px" text="**3**"></nldd-text-cell>
-          <nldd-spacer-cell size="12"></nldd-spacer-cell>
-          <nldd-text-cell text="**Gegevens aanleveren**" supporting-text="Justis levert de ingevulde dienstgegevens aan bij de makelaar, bijvoorbeeld: Dienstverlenernaam (OrganizationDisplayName): Justis; Dienstnaam (ServiceName): VOG aanvragen; Dienstomschrijving (ServiceDescription): Aanvragen van een Verklaring Omtrent het Gedrag; Betrouwbaarheidsniveau (AuthnContextClassRef): EH3."></nldd-text-cell>
-        </nldd-list-item>
-        <nldd-list-item>
-          <nldd-spacer-cell size="12"></nldd-spacer-cell>
-          <nldd-text-cell vertical-alignment="top" width="32px" text="**4**"></nldd-text-cell>
-          <nldd-spacer-cell size="12"></nldd-spacer-cell>
-          <nldd-text-cell text="**Doorgeven aan catalogus**" supporting-text="De makelaar geeft de dienstgegevens door aan de dienstencatalogus van eHerkenning."></nldd-text-cell>
-        </nldd-list-item>
-        <nldd-list-item>
-          <nldd-spacer-cell size="12"></nldd-spacer-cell>
-          <nldd-text-cell vertical-alignment="top" width="32px" text="**5**"></nldd-text-cell>
-          <nldd-spacer-cell size="12"></nldd-spacer-cell>
-          <nldd-text-cell text="**Registratie in catalogus**" supporting-text="De dienst wordt geregistreerd in de dienstencatalogus: Justis staat er nu in als dienstaanbieder, met &quot;VOG aanvragen&quot; als dienst."></nldd-text-cell>
-        </nldd-list-item>
-        <nldd-list-item>
-          <nldd-spacer-cell size="12"></nldd-spacer-cell>
-          <nldd-text-cell vertical-alignment="top" width="32px" text="**6**"></nldd-text-cell>
-          <nldd-spacer-cell size="12"></nldd-spacer-cell>
-          <nldd-text-cell text="**Dienst aangesloten**" supporting-text="De dienst is aangesloten op het eHerkenningsstelsel. Ondernemers kunnen nu voor deze dienst inloggen met eHerkenning, en werkgevers kunnen hun medewerkers voor deze dienst machtigen."></nldd-text-cell>
-        </nldd-list-item>
-      </nldd-list>
     </nldd-simple-section>
 
 
-    <nldd-simple-section id="bronnen">
+    <nldd-simple-section background="base" id="bronnen">
       <nldd-title size="3"><h3>Bronnen</h3></nldd-title>
       <nldd-spacer size="8"></nldd-spacer>
       <nldd-rich-text>
@@ -267,9 +228,10 @@
         <div id="opm-knop"></div>
         <nldd-container gap="4">
           <nldd-title size="4"><h2>Meedoen</h2></nldd-title>
-          <nldd-rich-text spacing="tight"><p>Heb je feedback of wil je meedenken? Dat kan altijd: stuur een e-mail naar <a href="mailto:moza@minbzk.nl">moza@minbzk.nl</a>.</p></nldd-rich-text>
+          <nldd-rich-text spacing="tight"><p>Heb je feedback of wil je meedenken? Dat kan altijd: stuur een e-mail naar <a href="mailto:moza@minbzk.nl">moza@minbzk.nl</a>.</p><p>Heb je een Rijksaccount? Dan kun je <a href="/auth/inloggen?voor=opmerkingen&amp;rd=/eherkenning-aansluiten.html">inloggen</a> en opmerkingen plaatsen op de pagina's.</p></nldd-rich-text>
         </nldd-container>
-        <nldd-rich-text spacing="tight"><p>Concept roadmap MOZa - inlog- en machtigingsmiddelen. Versie november 2026. Vereenvoudigde weergave op basis van het Afsprakenstelsel Elektronische Toegangsdiensten. Koffiezaak Noon, Karin en Bilal zijn een voorbeeld.</p></nldd-rich-text>
+        <nldd-divider style="--semantics-dividers-color: var(--primitives-color-neutral-200)"></nldd-divider>
+        <nldd-rich-text spacing="tight"><p>Concept MOZa - inlog- en machtigingsmiddelen. Versie november 2026. Vereenvoudigde weergave op basis van het Afsprakenstelsel Elektronische Toegangsdiensten. Koffiezaak Noon, Karin en Bilal zijn een voorbeeld.</p></nldd-rich-text>
       </nldd-container>
     </nldd-page-footer>
   </nldd-page>
